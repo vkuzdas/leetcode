@@ -17,8 +17,8 @@ public class ZumaGame {
 //        System.out.println(s.findMinStep("WWGWGW", "GWBWR")); // 3
 //        System.out.println(s.findMinStep("WWGWGW", "GWBWR")); // 3
 //        System.out.println(s.findMinStep("RRWWRRBBRR", "WB")); // 2
-//        System.out.println(s.findMinStep("RRGGBBYYWWRRGGBB", "RGBYW")); // 2
-        System.out.println(s.findMinStep("WWRRBBWW", "WRBRW")); // 2
+        System.out.println(s.findMinStep("RRGGBBYYWWRRGGBB", "RGBYW")); // 2
+//        System.out.println(s.findMinStep("WWRRBBWW", "WRBRW")); // 2
 
 //        System.out.println(s.collapseBoard("ABBBAACCC"));
 //        System.out.println(s.collapseBoard("WWWW"));
@@ -103,13 +103,17 @@ class Solution {
      */
     private void genAllNeighbors(Integer curr, ArrayList<ArrayList<Integer>> graph, HashMap<Integer, GameState> stateMap, HashSet<GameState> allStates) {
         GameState s = stateMap.get(curr);
-
+        int prevLen = s.board.length()+1;
         char[] charArray = s.hand.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
             // char from hand can be inserted ANYWHERE on the board (board.len + 1 positions)
             for (int j = 0; j < s.board.length() + 1; j++) {
                 String newBoard = collapseBoard(new StringBuilder(s.board).insert(j, c).toString());
+                if (prevLen > newBoard.length()) {
+                    // i've reached   W^BBW, therefore its the same state as WB^BW and WBB^W therefore i skip 2 indicis
+                    j = j + 2;
+                }
                 String newHand = new StringBuilder(s.hand).deleteCharAt(i).toString();
                 GameState newState = new GameState(newBoard, newHand, s.depth+1);
 
@@ -122,8 +126,9 @@ class Solution {
                     graph.get(curr).add(id); // adding neighbor to graph
 //                    System.out.println("added " + id + "->["+newBoard+","+newHand+"]");
                 }
+                prevLen = newBoard.length();
             }
-        }
+        }// RRGGBBYYWWRRGGBB
     }
 
     /**
