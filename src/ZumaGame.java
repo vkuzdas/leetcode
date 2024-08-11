@@ -85,7 +85,7 @@ class Solution {
 
             genAllNeighbors(curr, graph, stateMap, allStates);
             ArrayList<Integer> nbrs = graph.get(curr);
-
+            // TODO: track visited???
             for(Integer n : nbrs) {
                 if (stateMap.get(n).board.isEmpty()) {
                     return stateMap.get(n).depth;
