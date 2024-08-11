@@ -11,13 +11,13 @@ public class ZumaGame {
 //        System.out.println("hello".substring(0,2) + "hello".substring(3));
         Solution s = new Solution();
 //        System.out.println(s.findMinStep("WRRBBW", "RB"));
-//        System.out.println(s.findMinStep("WWRRBBWW", "WRBRW"));
+        System.out.println(s.findMinStep("WWRRBBWW", "WRBRW"));
 //        System.out.println(findMinStep("G", "GGGGG"));
 
 //        System.out.println(s.findMinStep("WWGWGW", "GWBWR")); // 3
 //        System.out.println(s.findMinStep("WWGWGW", "GWBWR")); // 3
 //        System.out.println(s.findMinStep("RRWWRRBBRR", "WB")); // 2
-        System.out.println(s.findMinStep("RRGGBBYYWWRRGGBB", "RGBYW")); // 2
+//        System.out.println(s.findMinStep("RRGGBBYYWWRRGGBB", "RGBYW")); // 2
 //        System.out.println(s.findMinStep("WWRRBBWW", "WRBRW")); // 2
 
 //        System.out.println(s.collapseBoard("ABBBAACCC"));
@@ -107,6 +107,9 @@ class Solution {
         char[] charArray = s.hand.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
+            if (i >= 1 && charArray[i-1] == c) {
+                continue;
+            }
             // char from hand can be inserted ANYWHERE on the board (board.len + 1 positions)
             for (int j = 0; j < s.board.length() + 1; j++) {
                 String newBoard = collapseBoard(new StringBuilder(s.board).insert(j, c).toString());
