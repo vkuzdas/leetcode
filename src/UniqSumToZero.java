@@ -1,28 +1,31 @@
 import java.util.Arrays;
 
-// https://leetcode.com/problems/find-n-unique-integers-sum-up-to-zero/description/
-
 public class UniqSumToZero {
+
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(Arrays.toString(s.sumZero(5)));
         System.out.println(Arrays.toString(s.sumZero(4)));
     }
 
     private static class Solution {
+        // Given an integer n, return any array containing n unique integers such that they add up to 0.
+        // vygeneruj uniq integery ktere sumuji do 0
         public int[] sumZero(int n) {
-            int[] ret = new int[n];
-
-            int idx = 0;
-            if (n%2 == 1) {
-                ret[idx++] = 0;
+            // pokud liche, pridej nulu
+            // pokud sude, iteruj do n/2 a to same dej i zaporne
+            int[] arr = new int[n];
+            int i = 0;
+            if (n % 2 != 0) {
+                arr[i++] = 0;
             }
-
-            for (int i = 1; i <= n/2; i++) {
-                ret[idx++] = i;
-                ret[idx++] = -i;
+            for (int j = i; j < n/2; j++) {
+                arr[i++] = i;
             }
-            return ret;
+            for (int j = i; j < n/2; j++) {
+                arr[i++] = -i;
+            }
+            return arr;
         }
     }
+
 }
