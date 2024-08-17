@@ -18,6 +18,8 @@ public class ThreeSum {
      * Fix a number. With this number excluded, do a TwoSum problem.
      */
     private static class Solution {
+        // 1) sort for better searching
+        // 2) insert into hashmap
         public List<List<Integer>> threeSum(int[] nums) {
             HashSet<List<Integer>> triplets = new HashSet<>();
 
