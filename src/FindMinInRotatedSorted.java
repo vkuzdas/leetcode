@@ -1,12 +1,18 @@
 import java.util.Arrays;
 
-public class FindMinInSorted {
+public class FindMinInRotatedSorted {
     public static void main(String[] args) {
         Solution s = new Solution();
         System.out.println(s.findMin(new int[]{3,4,5,6,11,16,99,168,1,2}));
         System.out.println(s.findMin(new int[]{6,11,16,99,168,1,2,3,4,5}));
         System.out.println(s.findMin(new int[]{6,11,16,99,168,2,3,4,5}));
     }
+
+    /**
+     * Given a sorted list that has been rotated, find the minimum value in it
+     *      - we can use modified binary search for this
+     *      - if middle element is lesser than last element, we know the element is in right subarray, left otherwise
+     */
 
     private static class Solution {
         public int findMin(int[] nums) {

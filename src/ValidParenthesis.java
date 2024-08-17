@@ -10,6 +10,15 @@ public class ValidParenthesis {
         System.out.println(s.isValid("{[}]()")); // [0,2]
     }
 
+    /**
+     * https://leetcode.com/problems/valid-parentheses/description/
+     *
+     * Given a String made of only opening and closing parenthesis, return whether it is correctly parenthesised.
+     *
+     * For each char in array:
+     *      - if curr is CLOSING par. and top is OPENING par. and both are matching, then POP
+     *      - if curr is OPENING par., then PUSH
+     */
     private static class Solution {
 
         public boolean isValid(String pars) {

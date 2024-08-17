@@ -5,7 +5,9 @@
 
 import java.util.HashSet;
 
-public class LinkedList02 {
+
+
+public class LLComponents {
 
     private static class ListNode {
         int val;
@@ -36,7 +38,18 @@ public class LinkedList02 {
         numComponents(getList1(), nums);
     }
 
-    // add all nums to hashset (O(n))
+    /**
+     * https://leetcode.com/problems/linked-list-components/description/
+     *
+     * You are given Linked List and an array that is subset of LL
+     * Return number of connected components in array
+     *
+     * add all nums to hashset (O(n))
+     * iterate over LL:
+     *      if curr in hashSet, start tracking
+     *      if curr not in hashSet, stop tracking
+     */
+
     // iterate over LL, if curr in hashSet, start tracking
     // if curr not in hashSet, stop tracking
     public static int numComponents(ListNode head, int[] nums) {

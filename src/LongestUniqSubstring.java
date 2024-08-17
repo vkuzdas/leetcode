@@ -12,12 +12,16 @@ public class LongestUniqSubstring {
         System.out.println(s.lengthOfLongestSubstring("gaaqfeqlqky")); // 4
     }
 
-    // have two pointers
-    //   f_ptr = new char to include
-    //   s_ptr = last char to include
-    //
-    // shift f_ptr on each iteration, try to insert it's char to HT
-    // if HT already contains its char, keep shifting s_ptr to the right
+    /**
+     * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+     *
+     * Given a string s, find the length of the longest substring without repeating characters.
+     * have two pointers
+     *   f_ptr = new char to include
+     *   s_ptr = last char to include
+     * shift f_ptr on each iteration, try to insert it's char to HT
+     * if HT already contains its char, keep shifting s_ptr to the right
+     */
     private static class Solution {
         public int lengthOfLongestSubstring(String str) {
             HashSet<Character> set = new HashSet<>();

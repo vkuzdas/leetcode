@@ -17,9 +17,9 @@ public class SpiralMatrix {
         }));
     }
 
-    // insert all strings into a hashtable, where:
-    //      - value is the string itself
-    //      - key is the sorted string
+    /**
+     * Traverse matrix in a spiral order
+     */
     private static class Solution {
 
         private final char RIGHT = 'r';

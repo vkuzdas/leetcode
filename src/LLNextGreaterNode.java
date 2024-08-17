@@ -5,7 +5,10 @@
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class LinkedList01 {
+
+// https://leetcode.com/problems/next-greater-node-in-linked-list/description/
+
+public class LLNextGreaterNode {
 
     private static class ListNode {
         int val;
@@ -75,6 +78,13 @@ public class LinkedList01 {
     }
 
 
+    /**
+     * Given the head of linked list, find next greater node for each node
+     *      - convert LL to an array
+     *      - for each el in array, put it to Stack
+     *          - if top is greater, push element to S
+     *          - if top is smaller, pop all tops that are smaller (these smaller elements will be assigned current as the next greater node)
+     */
     public static int[] nextLargerNodes(ListNode head) {
         // 1) convert LL to array
         ArrayList<Integer> arr = new ArrayList<>();

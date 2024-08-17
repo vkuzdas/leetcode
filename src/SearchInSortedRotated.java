@@ -21,6 +21,15 @@ public class SearchInSortedRotated {
         System.out.println(s.search(new int[]{5,1,3}, 2));
     }
 
+
+    /**
+     * Given sorted, then rotated array return the
+     * index of searched target. Return -1 if not present.
+     *
+     * 1) Find the pivot value by doing binary search
+     * 2) do binary search again, now informed about the pivot position:
+     *      - if target > pivot and target <= arr[last], target should be contained in the right subarray
+     */
     private static class Solution {
 
         public int search(int[] nums, int target) {
