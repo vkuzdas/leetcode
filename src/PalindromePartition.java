@@ -75,6 +75,9 @@ public class PalindromePartition {
             }
         }
 
+        // can be sped up by using cache:
+        // pass left and right pointers delimiting substring
+        // save s[l][r] into cache
         private boolean isPalindrome(String s) {
             if(s.isEmpty()) return false;
             String rev = new StringBuilder(s).reverse().toString();
