@@ -1,28 +1,33 @@
 class Solution {
         public int[][] insert(int[][] intervals, int[] newInterval) {
-            List<int[]> result = new ArrayList<>();
+            ArrayList<int[]> result = new ArrayList<>();
 
-            // for all before newInterval
             int i = 0;
-            while (i < intervals.length && intervals[i][1] < newInterval[0]) { // end less than start
+            while (i < intervals.length && intervals[i][1] < newInterval[0]) {
                 result.add(intervals[i]);
                 i++;
             }
-
-            // for all that touch newInterval
-            while (i < intervals.length && intervals[i][0] <= newInterval[1]) { // for all with len until new END
-                newInterval[0] = Math.min(intervals[i][0], newInterval[0]);
-                newInterval[1] = Math.max(intervals[i][1], newInterval[1]);
+            while (i < intervals.length && !(newInterval[1] < intervals[i][0])) {
+                newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
+                newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
                 i++;
             }
             result.add(newInterval);
 
-            // for all the rest
             while (i < intervals.length) {
                 result.add(intervals[i]);
                 i++;
             }
 
-            return result.toArray(new int[result.size()][]);
+            int [][] RES = new int[result.size()][2];
+            for (int j = 0; j < result.size(); j++) {
+                RES[j] = result.get(j);
+            }
+            return RES;
+
+            // 1) add intervals before new  (intervals[i][1] < newInterval[0])
+            // 2) merge all intervals touching newInterval (all intervals that are not before and: intrervals[i][1] < newInterval[1])
+
+            // 3) add all intervals after new
         }
 }
