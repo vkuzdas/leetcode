@@ -14,31 +14,20 @@
  * }
  */
 class Solution {
-        boolean balanced = false;
         boolean balanced = true;
         public boolean isBalanced(TreeNode root) {
             getDepth(root);
             return balanced;
         }
 
-        // return depth of given subtree
         private int getDepth(TreeNode root) {
-
-            // if subtree has no children, D = 0
-            if (root == null) {
+            if(root == null) 
                 return 0;
-            }
-
-            // get depth of children
-            int L = getDepth(root.right);
-            int R = getDepth(root.left);
-
-            // if subtrees differ by more than 1
-            if(Math.abs(L-R) > 1) {
+            
+            int R = getDepth(root.right);
+            int L = getDepth(root.left);
+            if (Math.abs(R-L) > 1) 
                 balanced = false;
-            }
-
-            // Depth of current tree = max depth of left and right subtree
-            return Math.max(L, R)+1;
+            return Math.max(R, L)+1;
         }
 }
