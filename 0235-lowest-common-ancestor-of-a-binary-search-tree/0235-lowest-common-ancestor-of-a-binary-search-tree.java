@@ -9,15 +9,27 @@
  */
 
 class Solution {
+        int min, max;
         public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-            TreeNode min = (p.val > q.val) ? q : p;
-            TreeNode max = (p.val > q.val) ? p : q;
-            if (min.val <= root.val && root.val <= max.val)
+            min = Math.min(p.val, q.val);
+            max = Math.max(p.val, q.val);
+
+            return DFS(root);
+
+        }
+
+        TreeNode DFS(TreeNode root) {
+            if(min <= root.val && root.val <= max) {
                 return root;
-            else if (root.val > max.val)
-                return lowestCommonAncestor(root.left, min, max);
-            else if (root.val < min.val)
-                return lowestCommonAncestor(root.right, min, max);
-            return root;
+            }
+            else if (min < root.val && max < root.val) {
+                return DFS(root.left);
+            }
+            else if (max > root.val && min > root.val) {
+                return DFS(root.right);
+            }
+            else {
+                return null;
+            }
         }
 }
