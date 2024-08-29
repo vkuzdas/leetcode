@@ -1,44 +1,41 @@
-class MyQueue {
-    Stack<Integer> insertor;
-    Stack<Integer> revertor;
-    int size;
+    class MyQueue {
 
-    public MyQueue() {
-        insertor = new Stack<>();
-        revertor = new Stack<>();
-        size = 0;
-    }
+        int size;
+        Stack<Integer> insertor;
+        Stack<Integer> revertor;
 
-    public void push(int x) {
-        while (!insertor.empty()) {
-            revertor.push(insertor.pop());
+        public MyQueue() {
+            size = 0;
+            insertor = new Stack<>();
+            revertor = new Stack<>();
         }
-        insertor.push(x);
-        while (!revertor.empty()) {
-            insertor.push(revertor.pop());
+
+        public void push(int x) {
+            // empty insertor onto revertor
+            while (!insertor.empty()) {
+                revertor.push(insertor.pop());
+            }
+
+            // insert pushed element onto empty insertor
+            insertor.push(x);
+
+            // pop everythin from revertor back onto insertor
+            while (!revertor.empty()) {
+                insertor.push(revertor.pop());
+            }
+            size++;
         }
-        size++;
-    }
 
-    public int pop() {
-        size--;
-        return insertor.pop();
-    }
+        public int pop() {
+            size--;
+            return insertor.pop();
+        }
 
-    public int peek() {
-        return insertor.peek();
-    }
+        public int peek() {
+            return insertor.peek();
+        }
 
-    public boolean empty() {
-        return size == 0;
+        public boolean empty() {
+            return size == 0;
+        }
     }
-}
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * MyQueue obj = new MyQueue();
- * obj.push(x);
- * int param_2 = obj.pop();
- * int param_3 = obj.peek();
- * boolean param_4 = obj.empty();
- */
