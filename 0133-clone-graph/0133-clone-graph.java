@@ -19,35 +19,40 @@ class Node {
 */
 
 class Solution {
-        boolean [] visited = new boolean[101];
-        Node[] instances = new Node[101];
-        
+        Node [] instances = new Node[101]; // 0 node does not exist
+        boolean[] visited = new boolean[101];
+
         public Node cloneGraph(Node node) {
             if(node == null) return null;
-            fillInstances(node);
+            copyInstance(node);
             visited = new boolean[101];
-            setNeighbours(node);
+            addNeighbors(node);
             return instances[1];
         }
 
-        private void setNeighbours(Node node) {
-            for (Node nbr : node.neighbors) {
-                // create bidirectional link between parent-neighbor instances
-                instances[node.val].neighbors.add(instances[nbr.val]);
-                instances[nbr.val].neighbors.add(instances[node.val]);
-                setNeighbours(nbr);
+        private void addNeighbors(Node node) {
+            if (visited[node.val]) return;
+            visited[node.val] = true;
+
+            for(Node nbr : node.neighbors) {
+                instances[nbr.val].neighbors.add(instances[node.val]); // add parent as neighbor of child
+                if (!visited[nbr.val]) {
+                    addNeighbors(nbr);
+                }
             }
         }
 
+        private void copyInstance(Node node) {
+            if (visited[node.val]) return;
 
-        void fillInstances(Node node) {
+            Node clone = new Node(node.val);
+            clone.neighbors = new ArrayList<>();
+            instances[node.val] = clone;
             visited[node.val] = true;
-            Node newNode = new Node(node.val);
-            newNode.neighbors = new ArrayList<>();
-            instances[newNode.val] = newNode;
-            for (Node nbr : node.neighbors) {
-                if(!visited[nbr.val]) {
-                    fillInstances(node);
+
+            for(Node nbr : node.neighbors) {
+                if (!visited[nbr.val]) {
+                    copyInstance(nbr);
                 }
             }
         }
