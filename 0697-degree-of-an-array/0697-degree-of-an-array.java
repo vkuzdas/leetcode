@@ -1,35 +1,22 @@
 class Solution {
+
         public int findShortestSubArray(int[] nums) {
             HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-            HashSet<Integer> uniqNums = new HashSet<>();
+            int maxLen = 0;
             for (int i = 0; i < nums.length; i++) {
-                int num = nums[i];
-                uniqNums.add(num);
-                if (!map.containsKey(num)) {
-                    ArrayList<Integer> l = new ArrayList<>();
-                    l.add(i);
-                    map.put(num, l);
-                } else {
-                    map.get(num).add(i);
+                if (!map.containsKey(nums[i])) {
+                    map.put(nums[i], new ArrayList<>());
+                }
+                map.get(nums[i]).add(i);
+                maxLen = Math.max(maxLen, map.get(nums[i]).size());
+            }
+            int minDiff = Integer.MAX_VALUE;
+            // for each list in map, get if list has maxLen, update maxDiff
+            for(ArrayList<Integer> list : map.values()) {
+                if (list.size() == maxLen) {
+                    minDiff = Math.min(minDiff, list.get(list.size()-1) - list.get(0)+1);
                 }
             }
-
-            int maxDegree = Integer.MIN_VALUE;
-
-            for(int num : uniqNums) {
-                if (map.get(num).size() > maxDegree) {
-                    maxDegree = map.get(num).size();
-                }
-            }
-
-            int minLen = Integer.MAX_VALUE;
-            for(int num : uniqNums) {
-                if (map.get(num).size() == maxDegree) {
-                    int diff = map.get(num).get(map.get(num).size()-1) - map.get(num).get(0) + 1;
-                    minLen = Math.min(diff, minLen);
-                }
-            }
-
-            return minLen;
+            return minDiff;
         }
 }
