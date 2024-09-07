@@ -15,9 +15,8 @@ public class Solution extends VersionControl {
         }
 
         private int bs(int i, int j) {
-            if (j-i <=2) {
+            if (j-i <=1) {
                 if (isBadVersion(i)) return i;
-                if (isBadVersion(i+1)) return i+1;
                 if (isBadVersion(j)) return j;
             }
 
