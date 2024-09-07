@@ -2,21 +2,31 @@
       boolean isBadVersion(int version); */
 
 public class Solution extends VersionControl {
-    public int firstBadVersion(int n) {
-        return bs(0,n);
-    }
+        public int firstBadVersion(int n) {
+            int i = 1;
+            int j = n;
+            int m = i+(j-i)/2;
+            if (isBadVersion(m)) {
+                return bs(i, m);
+            }
+            else {
+                return bs(m, j);
+            }
+        }
 
-    private int bs(int i, int j) {
-        if (i==j) {
-            return j;
+        private int bs(int i, int j) {
+            if (j-i <=2) {
+                if (isBadVersion(i)) return i;
+                if (isBadVersion(i+1)) return i+1;
+                if (isBadVersion(j)) return j;
+            }
+
+            int m = i+(j-i)/2;
+            if (isBadVersion(m)) {
+                return bs(i, m);
+            }
+            else {
+                return bs(m, j);
+            }
         }
-        if (j-i == 1) {
-            return isBadVersion(j) ? j : i;
-        }
-        int m = i+(j-i)/2; // use this to prevent overflow!!!
-        if (isBadVersion(m)) {
-            return bs(i, m);
-        }
-        else return bs(m, j);
-    }
 }
