@@ -19,41 +19,42 @@ class Node {
 */
 
 class Solution {
-        Node [] instances = new Node[101]; // 0 node does not exist
-        boolean[] visited = new boolean[101];
-
         public Node cloneGraph(Node node) {
-            if(node == null) return null;
-            copyInstance(node);
-            visited = new boolean[101];
-            addNeighbors(node);
+            if (node==null) return null;
+            HashSet<Node> visited = new HashSet<>();
+            HashMap<Integer, ArrayList<Integer>> adj = new HashMap<>();
+            Stack<Node> S = new Stack<>();
+            S.add(node);
+            visited.add(node);
+
+            while (!S.empty()) {
+                Node curr = S.pop();
+                ArrayList<Integer> nbrsOfCurr = new ArrayList<>();
+                for(Node nbr : curr.neighbors) {
+                    nbrsOfCurr.add(nbr.val);
+                    if (visited.contains(nbr)) continue;
+                    S.add(nbr);
+                    visited.add(nbr);
+                }
+                adj.put(curr.val, nbrsOfCurr);
+            }
+
+
+            // instances
+            Node[] instances = new Node[adj.size()+1]; // 0th index is empty
+            for (int i = 1; i < adj.size()+1; i++) {
+                instances[i] = new Node(i);
+                instances[i].neighbors = new ArrayList<>();
+            }
+
+            // neighbors
+            for (int i = 1; i < adj.size()+1; i++) {
+                for (int nbr : adj.get(i)) {
+                    instances[i].neighbors.add(instances[nbr]);
+                }
+            }
+
             return instances[1];
-        }
 
-        private void addNeighbors(Node node) {
-            if (visited[node.val]) return;
-            visited[node.val] = true;
-
-            for(Node nbr : node.neighbors) {
-                instances[nbr.val].neighbors.add(instances[node.val]); // add parent as neighbor of child
-                if (!visited[nbr.val]) {
-                    addNeighbors(nbr);
-                }
-            }
-        }
-
-        private void copyInstance(Node node) {
-            if (visited[node.val]) return;
-
-            Node clone = new Node(node.val);
-            clone.neighbors = new ArrayList<>();
-            instances[node.val] = clone;
-            visited[node.val] = true;
-
-            for(Node nbr : node.neighbors) {
-                if (!visited[nbr.val]) {
-                    copyInstance(nbr);
-                }
-            }
         }
 }
