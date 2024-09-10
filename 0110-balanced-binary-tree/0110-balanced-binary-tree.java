@@ -21,13 +21,13 @@ class Solution {
         }
 
         private int getDepth(TreeNode root) {
-            if(root == null) 
-                return 0;
-            
-            int R = getDepth(root.right);
+
+            if(root == null) return 0;
+
             int L = getDepth(root.left);
-            if (Math.abs(R-L) > 1) 
+            int R = getDepth(root.right);
+            if(Math.abs(R-L) > 1)
                 balanced = false;
-            return Math.max(R, L)+1;
+            return Math.max(R,L) + 1;
         }
 }
