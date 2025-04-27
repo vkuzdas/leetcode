@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0035-search-insert-position](https://github.com/vkuzdas/leetcode/tree/master/0035-search-insert-position) |
 | [0200-number-of-islands](https://github.com/vkuzdas/leetcode/tree/master/0200-number-of-islands) |
+| [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 ## Binary Search
 |  |
 | ------- |
@@ -17,6 +18,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 |  |
 | ------- |
+| [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/vkuzdas/leetcode/tree/master/0920-uncommon-words-from-two-sentences) |
 ## String
 |  |
@@ -42,4 +44,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/vkuzdas/leetcode/tree/master/0200-number-of-islands) |
+## Sorting
+|  |
+| ------- |
+| [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 <!---LeetCode Topics End-->
