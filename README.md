@@ -19,10 +19,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
+| [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/vkuzdas/leetcode/tree/master/0920-uncommon-words-from-two-sentences) |
 ## String
 |  |
 | ------- |
+| [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/vkuzdas/leetcode/tree/master/0920-uncommon-words-from-two-sentences) |
 ## Counting
 |  |
@@ -48,4 +50,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
+| [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
 <!---LeetCode Topics End-->
