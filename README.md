@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0035-search-insert-position](https://github.com/vkuzdas/leetcode/tree/master/0035-search-insert-position) |
 | [0200-number-of-islands](https://github.com/vkuzdas/leetcode/tree/master/0200-number-of-islands) |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
+| [1421-find-numbers-with-even-number-of-digits](https://github.com/vkuzdas/leetcode/tree/master/1421-find-numbers-with-even-number-of-digits) |
 ## Binary Search
 |  |
 | ------- |
@@ -51,4 +52,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
+## Math
+|  |
+| ------- |
+| [1421-find-numbers-with-even-number-of-digits](https://github.com/vkuzdas/leetcode/tree/master/1421-find-numbers-with-even-number-of-digits) |
 <!---LeetCode Topics End-->
