@@ -7,8 +7,4 @@ class Solution:
         c = Counter(nums)
         for num, freq in c.items():
             heapq.heappush(pq, (-freq, num))
-        r = list()
-        for i in range(k):
-            r.append(heapq.heappop(pq)[1])
-        return r
-
+        return [heapq.heappop(pq)[1] for _ in range(k)]
