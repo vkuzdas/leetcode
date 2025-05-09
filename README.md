@@ -9,6 +9,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/vkuzdas/leetcode/tree/master/0049-group-anagrams) |
 | [0200-number-of-islands](https://github.com/vkuzdas/leetcode/tree/master/0200-number-of-islands) |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
 | [1421-find-numbers-with-even-number-of-digits](https://github.com/vkuzdas/leetcode/tree/master/1421-find-numbers-with-even-number-of-digits) |
 ## Binary Search
 |  |
@@ -25,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/vkuzdas/leetcode/tree/master/0049-group-anagrams) |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/vkuzdas/leetcode/tree/master/0920-uncommon-words-from-two-sentences) |
 ## String
 |  |
@@ -35,6 +37,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Counting
 |  |
 | ------- |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/vkuzdas/leetcode/tree/master/0920-uncommon-words-from-two-sentences) |
 ## Depth-First Search
 |  |
@@ -58,8 +61,25 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/vkuzdas/leetcode/tree/master/0049-group-anagrams) |
 | [0217-contains-duplicate](https://github.com/vkuzdas/leetcode/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/vkuzdas/leetcode/tree/master/0242-valid-anagram) |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
 ## Math
 |  |
 | ------- |
 | [1421-find-numbers-with-even-number-of-digits](https://github.com/vkuzdas/leetcode/tree/master/1421-find-numbers-with-even-number-of-digits) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
+## Bucket Sort
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
+## Quickselect
+|  |
+| ------- |
+| [0347-top-k-frequent-elements](https://github.com/vkuzdas/leetcode/tree/master/0347-top-k-frequent-elements) |
 <!---LeetCode Topics End-->
